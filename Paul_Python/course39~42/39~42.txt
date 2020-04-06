@@ -1,0 +1,35 @@
+#--------------------- 39 pip3/pip 套件安裝的工具 ---------------------
+# 安裝python時會內建pip，更新pip套件的指令
+python -m pip install --upgrade pip
+#  pip安裝與解安裝套件指令
+pip3 install requests
+pip3 uninstall requests
+
+#--------------------- 40 pip3 安裝套件自動化 ---------------------
+# 列出所在目錄的py程式所需的套件
+pip3 freeze
+
+# 把所需的套件名稱寫到txt裡面
+pip3 freeze > requirements.txt
+
+# 自動安裝在requirements.txt內的所有套件
+pip3 install -r requirements.txt
+
+# 缺點：1. 只會安裝txt底下，套件顯示的版本，並不會安裝到最新的版本 2. 因為相依性，會出現其他次要套件
+
+# 手動直接在requirements.txt編輯，所需要的主要套件
+requirements.txt:
+  requests
+  bs4
+  gtts
+
+#--------------------- 41 virtualenv 虛擬環境的使用 ---------------------
+# 僅只有目錄隔離，不是虛擬機器
+pip3 install virtualenv
+# 創造虛擬環境
+virtualenv env or python3 -m venv env
+# 執行虛擬環境
+source env/bin/activate (linux)
+env\Scripts\activate (windows)
+# 解除環境
+deactivate

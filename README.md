@@ -1,1 +1,1 @@
-# Python
+# Python course for beginners
